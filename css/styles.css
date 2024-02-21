@@ -2,8 +2,9 @@
   --fuenteHeading: "PT Sans", sans-serif;
   --fuenteParrafo: "Open Sans", sans-serif;
 
-  --primario: #784D3C;
-  --blanco: #FFF;
+  --primario: #784d3c;
+  --blanco: #fff;
+  --gris: #e1e1e1;
   --negro: #000;
 }
 
@@ -12,7 +13,9 @@
   font-size: 62.5%;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -25,8 +28,9 @@ body {
 /* Globales */
 
 .contenedor {
-  max-width: 120rem;
-  width: 90%;
+  /* max-width: 120rem;
+  width: 90%; */
+  width: min(90%, 120rem);
   margin: 0 auto;
 }
 
@@ -34,8 +38,12 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--fuenteHeading);
+  line-height: 1.2;
 }
 
 h1 {
@@ -70,4 +78,120 @@ img {
 
 .centrar-texto {
   text-align: center;
+}
+
+/* header */
+
+/* Si al hacer uso del modernizr indica la clase webp, se cargara la imagen webp */
+.webp .header {
+  background-image: url(../img/banner.webp);
+}
+/* Si no, definir la imagen normal */
+.no-webp .header {
+  background-image: url(../img/banner.jpg);
+}
+
+.header {
+  height: 60rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.header__texto {
+  text-align: center;
+  color: var(--blanco);
+  margin-top: 5rem;
+}
+
+.barra {
+  padding-top: 4rem;
+}
+
+.logo {
+  color: var(--blanco);
+}
+
+.logo__nombre {
+  font-weight: 400;
+}
+
+.logo__bold {
+  font-weight: 700;
+}
+
+.navegacion__enlace {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--blanco);
+}
+
+/* Botones */
+
+.boton {
+  /* Si la pantalla es pequeña, ocupara todo el espacio disponible con el siguiente display */
+  display: block;
+  font-family: var(--fuenteHeading);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  border: none;
+}
+
+.boton:hover {
+  cursor: pointer;
+}
+
+.boton--primario {
+  background-color: var(--negro);
+}
+
+.boton--secundario {
+  background-color: var(--primario);
+}
+
+/* footer */
+
+.footer {
+  background-color: var(--negro);
+  padding-bottom: 3rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 374px) and (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navegacion {
+    display: flex;
+    gap: 2rem;
+  }
+  .header__texto {
+    margin-top: 15rem;
+  }
+  .boton {
+    display: inline-block;
+  }
 }

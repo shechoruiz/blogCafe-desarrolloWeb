@@ -1,0 +1,54 @@
+.contacto-bg {
+  background-image: url(../img/contacto.jpg);
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.formulario {
+  background-color: var(--blanco);
+  margin: -5rem auto 0 auto;
+  width: 95%;
+  padding: 1rem;
+}
+
+.campo {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.campo:last-of-type {
+  margin-bottom: 0;
+}
+
+.campo__label {
+  flex: 0 0 6rem;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.campo__field {
+  flex: 1;
+  border: 1px solid var(--gris);
+  width: 100%;
+}
+
+.campo__field--textarea {
+  height: 20rem;
+}
+
+@media (min-width: 479px) {
+  .campo__field {
+    width: unset;
+  }
+}
+
+@media (min-width: 769px) {
+  .campo__label {
+    flex: 0 0 9rem;
+    padding-right: 2rem;
+  }
+  .formulario {
+    padding: 1.5rem;
+  }
+}
